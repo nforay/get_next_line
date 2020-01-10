@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 17:07:15 by nforay            #+#    #+#             */
-/*   Updated: 2020/01/06 23:38:28 by nforay           ###   ########.fr       */
+/*   Updated: 2020/01/10 19:23:52 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ char		*ft_strdup(const char *src)
 	return (pointeur);
 }
 
-static int	verif(int fd, char **reading, char **line)
+static int	verif(int fd, char **tmp, char **line)
 {
 	if (BUFFER_SIZE < 1 || fd == -1 || !line 
-			|| (!(reading[fd]) && !(reading[fd] = ft_strdup(""))))
+			|| (!(tmp[fd]) && !(tmp[fd] = ft_strdup(""))))
 		return (0);
 	return (1);
 }
@@ -43,27 +43,26 @@ static int	verif(int fd, char **reading, char **line)
 int			get_next_line(int fd, char **line)
 {
 	size_t		ret;
-	static char	*reading[4000];
+	static char	*tmp[4000];
 	char		buf[BUFFER_SIZE + 1];
 	char		*cpy;
 
-	if ((read(fd, buf, 0) == -1) || !verif(fd, reading, line))
+	if ((read(fd, buf, 0) == -1) || !verif(fd, tmp, line))
 		return (-1);
-	while ((ft_strlentoc(reading[fd], '\n') == (ft_strlen(reading[fd])))
-		&& (ret = read(fd, buf, BUFFER_SIZE)))
+	while (!(ft_strlentoc(tmp[fd], '\n')) && (ret = read(fd, buf, BUFFER_SIZE)))
 	{
 		buf[ret] = '\0';
-		cpy = ft_strjoin(reading[fd], buf);
-		free(reading[fd]);
-		reading[fd] = cpy;
+		cpy = ft_strjoin(tmp[fd], buf);
+		free(tmp[fd]);
+		tmp[fd] = cpy;
 	}
-	*line = ft_substr(reading[fd], 0, ft_strlentoc(reading[fd], '\n'));
-	if (*reading[fd])
+	*line = ft_substr(tmp[fd], 0, ft_strlentoc(tmp[fd], '\n'));
+	if (*tmp[fd] && ((ft_strlentoc(tmp[fd], '\n'))))
 	{
-		ret = (ft_strlen(reading[fd]) - ft_strlentoc(reading[fd], '\n'));
-		cpy = ft_substr(reading[fd], ft_strlentoc(reading[fd], '\n') + 1, ret);
-		free(reading[fd]);
-		reading[fd] = cpy;
+		ret = (ft_strlen(tmp[fd]) - ft_strlentoc(tmp[fd], '\n'));
+		cpy = ft_substr(tmp[fd], ft_strlentoc(tmp[fd], '\n') + 1, ret);
+		free(tmp[fd]);
+		tmp[fd] = cpy;
 		return (1);
 	}
 	return (0);

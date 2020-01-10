@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 17:07:09 by nforay            #+#    #+#             */
-/*   Updated: 2020/01/06 23:37:43 by nforay           ###   ########.fr       */
+/*   Updated: 2020/01/10 19:16:39 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t 	ft_strlentoc(const char *str, int c)
 		i++;
 	if (str[i] == c)
 		return (i);
-	return (i);
+	return (0);
 }
 
 size_t	ft_strlen(const char *str)
