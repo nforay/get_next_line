@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 17:07:15 by nforay            #+#    #+#             */
-/*   Updated: 2020/01/18 00:03:38 by nforay           ###   ########.fr       */
+/*   Updated: 2020/02/02 14:37:58 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char		*ft_strdup(const char *src)
 
 static int	check_vars(int fd, char **tmp, char **line)
 {
-	if (BUFFER_SIZE < 1 || fd == -1 || !line 
+	if (BUFFER_SIZE < 1 || fd == -1 || !line
 			|| (!(tmp[fd]) && !(tmp[fd] = ft_strdup(""))))
 		return (0);
 	return (1);

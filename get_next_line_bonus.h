@@ -6,12 +6,12 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 17:07:19 by nforay            #+#    #+#             */
-/*   Updated: 2020/01/17 23:38:45 by nforay           ###   ########.fr       */
+/*   Updated: 2020/02/02 14:37:57 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -27,4 +27,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_strdup(const char *src);
 char	*ft_strjoin(char const *s1, char const *s2);
 
-# endif
+#endif

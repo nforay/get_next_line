@@ -6,13 +6,13 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 17:07:09 by nforay            #+#    #+#             */
-/*   Updated: 2020/01/11 17:28:27 by nforay           ###   ########.fr       */
+/*   Updated: 2020/02/02 14:37:59 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t 	ft_strlentoc(const char *str, int c)
+size_t	ft_strlentoc(const char *str, int c)
 {
 	size_t i;
 
@@ -64,7 +64,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s += start;
 	ft_memcpy(ptr, s, len);
 	ptr[len] = '\0';
- 	return (ptr);
+	return (ptr);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
