@@ -6,11 +6,11 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/14 17:07:09 by nforay            #+#    #+#             */
-/*   Updated: 2020/02/02 14:37:59 by nforay           ###   ########.fr       */
+/*   Updated: 2020/02/02 15:17:35 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlentoc(const char *str, int c)
 {
